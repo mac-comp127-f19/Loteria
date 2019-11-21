@@ -21,7 +21,7 @@ public class MainCard extends Rectangle {
         double spacing = canvas.getWidth() * 0.05;
 
         double cardWidth = (canvas.getWidth() - (spacing * (NUM_BRICKS_PER_ROW + 1)))/NUM_BRICKS_PER_ROW;
-        double cardHeight = cardWidth;
+        double cardHeight = cardWidth * 2;
 
         double y = spacing;
 
