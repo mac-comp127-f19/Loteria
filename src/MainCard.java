@@ -3,6 +3,7 @@ import comp127graphics.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainCard extends Rectangle {
 
@@ -10,6 +11,7 @@ public class MainCard extends Rectangle {
     public static double NUM_BRICKS_PER_ROW = 4;
     public static double NUM_ROW = 4;
     private List<Rectangle> cardList = new ArrayList<>();
+    private Colors color = new Colors();
 
     public MainCard(double x, double y, double width, double height) {
         super(x, y, width, height);
@@ -31,6 +33,7 @@ public class MainCard extends Rectangle {
                 Rectangle card = new Rectangle(cardHeight, cardWidth, x, y);
                 cardList.add(card);
                 canvas.add(card);
+                card.setFillColor(color.getRandomColor());
                 x += cardWidth;
             }
             y += cardHeight;
