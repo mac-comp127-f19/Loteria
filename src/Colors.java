@@ -2,11 +2,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class Colors {
+    private List<Color> colors= new ArrayList<>();
 
     public Colors(){
-        List<Color> colors = Arrays.asList(
+        colors = Arrays.asList(
         new Color(255, 0, 0),
         new Color(0, 255, 0),
         new Color(0, 0, 255),
@@ -25,5 +27,11 @@ public class Colors {
         new Color(65, 47, 35),
         new Color(3, 55, 19),
         new Color(64,0, 5));
+    }
+
+    public Color getRandomColor() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(18);
+        return colors.get(randomIndex);
     }
 }
