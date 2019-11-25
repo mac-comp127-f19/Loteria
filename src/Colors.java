@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Colors {
     private List<Color> colors;
-    private MainCard mainCard;
+    private CardManager cardManager;
 
     public Colors(){
 

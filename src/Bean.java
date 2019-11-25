@@ -5,6 +5,7 @@ public class Bean extends Ellipse {
 
     public Bean(double x, double y) {
         super(x, y, 4 * BEAN_RADIUS, 2 * BEAN_RADIUS);
+
     }
 
 }

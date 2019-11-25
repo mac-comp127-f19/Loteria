@@ -4,9 +4,9 @@ import java.awt.*;
 
 public class Card extends Rectangle{
 
-    private MainCard mainCard;
+    private CardManager cardManager;
 
-    public Card(double height, double width, double x, double y, MainCard mainCard) {
+    public Card(double height, double width, double x, double y, CardManager cardManager) {
         super(x, y, width, height);
 
         int red = (int) (Math.random() * 256);
@@ -16,6 +16,6 @@ public class Card extends Rectangle{
 
         this.setFillColor(randomColor);
 
-        this.mainCard = mainCard;
+        this.cardManager = cardManager;
     }
 }
