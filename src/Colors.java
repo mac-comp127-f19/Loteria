@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 public class Colors {
-    private List<Color> colors= new ArrayList<>();
+    private List<Color> colors;
+    private MainCard mainCard;
 
     public Colors(){
+
         colors = Arrays.asList(
         new Color(255, 0, 0),
         new Color(0, 255, 0),
@@ -27,6 +29,7 @@ public class Colors {
         new Color(65, 47, 35),
         new Color(3, 55, 19),
         new Color(64,0, 5));
+
     }
 
     public Color getRandomColor() {

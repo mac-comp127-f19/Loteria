@@ -3,9 +3,8 @@ import comp127graphics.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public class MainCard extends Rectangle {
+public class MainCard{
 
     private CanvasWindow canvas;
     public static double NUM_BRICKS_PER_ROW = 4;
@@ -13,14 +12,13 @@ public class MainCard extends Rectangle {
     private List<Rectangle> cardList = new ArrayList<>();
     private Colors color = new Colors();
 
-    public MainCard(double x, double y, double width, double height) {
-        super(x, y, width, height);
-
-
+    public MainCard(CanvasWindow canvas) {
+        this.canvas = canvas;
+        cardRows();
     }
 
     public void cardRows(){
-        double spacing = canvas.getWidth() * 0.05;
+        double spacing = canvas.getWidth() * 0.14;
 
         double cardWidth = (canvas.getWidth() - (spacing * (NUM_BRICKS_PER_ROW + 1)))/NUM_BRICKS_PER_ROW;
         double cardHeight = cardWidth * 2;
@@ -30,7 +28,7 @@ public class MainCard extends Rectangle {
         for(int r = 0; r < NUM_ROW; r++) {
             double x = spacing;
             for (int i = 0; i < NUM_BRICKS_PER_ROW; i++) {
-                Rectangle card = new Rectangle(cardHeight, cardWidth, x, y);
+                Card card = new Card(cardHeight, cardWidth, x, y, this);
                 cardList.add(card);
                 canvas.add(card);
                 card.setFillColor(color.getRandomColor());
