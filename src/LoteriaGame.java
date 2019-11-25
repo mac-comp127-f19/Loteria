@@ -13,7 +13,8 @@ public class LoteriaGame {
 
         cardManager = new CardManager(canvas);
 
-        canvas.onClick(event -> bean.setPosition(event.getPosition()));
+        canvas.onClick(event ->
+                canvas.add(new Bean(event.getPosition().getX(),event.getPosition().getY())));
     }
 
     public static void main(String[] args){
