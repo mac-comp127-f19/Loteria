@@ -7,7 +7,4 @@ public class Bean extends Ellipse {
         super(x, y, 4 * BEAN_RADIUS, 2 * BEAN_RADIUS);
     }
 
-    public void checkCard(LoteriaGame Loteria){
-
-    }
 }
