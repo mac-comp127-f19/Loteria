@@ -10,7 +10,7 @@ public class LoteriaGame {
     public LoteriaGame() {
         canvas = new CanvasWindow("Breakout!", CANVAS_WIDTH, CANVAS_HEIGHT);
 
-        mainCard = new MainCard(canvas);
+//        mainCard = new MainCard(canvas);
     }
 
     public static void main(String[] args){
