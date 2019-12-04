@@ -31,10 +31,13 @@ public class CardManager{
                 Card card = new Card(cardHeight, cardWidth, x, y, this );
                 cardList.add(card);
                 canvas.add(card);
-                card.setFillColor(color.getRandomColor());
                 x += cardWidth;
             }
             y += cardHeight;
+        }
+
+        for (Rectangle cards: cardList) {
+            cards.setFillColor(color.getRandomColor());
         }
     }
 }

@@ -1,7 +1,6 @@
 import java.awt.*;
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
 
 public class Colors {
     private List<Color> colors;
@@ -29,11 +28,16 @@ public class Colors {
         new Color(3, 55, 19),
         new Color(64,0, 5));
 
+
+
     }
 
     public Color getRandomColor() {
-        Random random = new Random();
-        int randomIndex = random.nextInt(18);
-        return colors.get(randomIndex);
+     List<Color> copyofColors = new ArrayList(colors);
+     Collections.shuffle(copyofColors);
+     for(int i= 0; i<=copyofColors.size(); i++) {
+         return copyofColors.get(i);
+     }
+     return null;
     }
 }
