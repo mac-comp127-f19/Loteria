@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Colors {
     private List<Color> colors;
+    private Color backColor = Color.BLUE;
     private CardManager cardManager;
 
     public Colors(){
@@ -32,12 +33,13 @@ public class Colors {
 
     }
 
-    public Color getRandomColor() {
-     List<Color> copyofColors = new ArrayList(colors);
-     Collections.shuffle(copyofColors);
-     for(int i= 0; i<=copyofColors.size(); i++) {
-         return copyofColors.get(i);
-     }
-     return null;
+    public List<Color> getRandomColor() {
+        List<Color> copyofColors = new ArrayList(colors);
+        Collections.shuffle(copyofColors);
+        return copyofColors;
+    }
+
+    public void removeColor(Color color){
+        colors.remove(color);
     }
 }

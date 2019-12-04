@@ -1,4 +1,5 @@
 import comp127graphics.CanvasWindow;
+import comp127graphics.GraphicsObject;
 import comp127graphics.Point;
 import comp127graphics.ui.Button;
 
@@ -10,7 +11,7 @@ public class LoteriaGame {
     private CanvasWindow canvas;
 
     public LoteriaGame() {
-        canvas = new CanvasWindow("Breakout!", CANVAS_WIDTH, CANVAS_HEIGHT);
+        canvas = new CanvasWindow("Loteria!", CANVAS_WIDTH, CANVAS_HEIGHT);
 
         cardManager = new CardManager(canvas);
 
@@ -24,17 +25,16 @@ public class LoteriaGame {
         Button callLoteria = new Button ("Loteria");
         callLoteria.setPosition(400, 400);
         canvas.add(callLoteria);
-//        changeBrush.onClick(() ->
     }
 
     public void addBean(Point point) {
-//        GraphicsObject obj1 = canvas.getElementAt(point.getX(), bean.getY() + bean.getBeanRadius() * 2);
-//        GraphicsObject obj2 = canvas.getElementAt(bean.getX() + bean.getBeanRadius() * 2, bean.getY() + bean.getBeanRadius() * 2);
-//        GraphicsObject obj3 = canvas.getElementAt(bean.getX(), bean.getY() + bean.getBeanRadius() * 2);
-//        GraphicsObject obj4 = canvas.getElementAt(bean.getX() + bean.getBeanRadius() * 2, bean.getY() + bean.getBeanRadius() * 2);
-
-        if (canvas.getElementAt(point) instanceof Card) {
-            canvas.add();
+        GraphicsObject object = canvas.getElementAt(point);
+        if (object instanceof Card) {
+            Bean bean = new Bean(0, 0);
+            bean.setCenter(point);
+            if (((Card) object).setBean(bean)) {
+                canvas.add(bean);
+            }
         }
     }
 

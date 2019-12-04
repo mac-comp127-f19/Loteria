@@ -1,6 +1,7 @@
 import comp127graphics.CanvasWindow;
 import comp127graphics.Rectangle;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class CardManager{
     private CanvasWindow canvas;
     public static double NUM_BRICKS_PER_ROW = 4;
     public static double NUM_ROW = 4;
-    private List<Rectangle> cardList = new ArrayList<>();
+    private List<Card> cardList = new ArrayList<>();
     private Colors color = new Colors();
 
     public CardManager(CanvasWindow canvas) {
@@ -36,8 +37,9 @@ public class CardManager{
             y += cardHeight;
         }
 
-        for (Rectangle cards: cardList) {
-            cards.setFillColor(color.getRandomColor());
+        List<Color> randomColor = color.getRandomColor();
+        for (int n = 0; n < cardList.size(); n++) {
+            cardList.get(n).setFillColor(randomColor.get(n));
         }
     }
 }

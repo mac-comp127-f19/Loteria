@@ -5,6 +5,7 @@ import java.awt.*;
 public class Card extends Rectangle{
 
     private CardManager cardManager;
+    private Bean bean;
 
     public Card(double height, double width, double x, double y, CardManager cardManager) {
         super(x, y, width, height);
@@ -17,5 +18,14 @@ public class Card extends Rectangle{
         this.setFillColor(randomColor);
 
         this.cardManager = cardManager;
+    }
+
+    public boolean setBean(Bean bean){
+        if(this.bean == null){
+            this.bean = bean;
+            return true;
+        }else{
+            return false;
+        }
     }
 }
