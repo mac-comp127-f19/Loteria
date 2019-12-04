@@ -1,12 +1,15 @@
 import comp127graphics.CanvasWindow;
 import comp127graphics.GraphicsObject;
 import comp127graphics.Point;
+import comp127graphics.Rectangle;
 import comp127graphics.ui.Button;
 
 public class LoteriaGame {
     private static final int CANVAS_WIDTH = 800;
     private static final int CANVAS_HEIGHT = 600;
     private CardManager cardManager;
+    private DeckOfCards deck;
+    private Colors colors;
 
     private CanvasWindow canvas;
 
@@ -19,6 +22,11 @@ public class LoteriaGame {
 
         canvas.onClick(event ->
                 addBean(event.getPosition()));
+
+//        for(Rectangle card: deck) {
+//            canvas.add(card);
+//        }
+//        drawCard();
     }
 
     private void addLoteriaButton(){
@@ -36,6 +44,15 @@ public class LoteriaGame {
                 canvas.add(bean);
             }
         }
+    }
+
+    /**
+     * Animates the actual card flipping
+     *
+     */
+    public void drawCard(){
+        Card topCard = deck.get(0);
+        canvas.animate(topCard::moveCard);
     }
 
     public static void main(String[] args){

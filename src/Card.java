@@ -28,4 +28,11 @@ public class Card extends Rectangle{
             return false;
         }
     }
+
+    /**
+     * Changes the position of the card so that it moves over once drawn
+     */
+    public void moveCard(){
+        this.setCenter(this.getX() + 100, this.getY());
+    }
 }
