@@ -22,7 +22,7 @@ public class CardManager{
         double spacing = canvas.getWidth() * 0.14;
 
         double cardWidth = (canvas.getWidth() - (spacing * (NUM_BRICKS_PER_ROW + 1)))/NUM_BRICKS_PER_ROW;
-        double cardHeight = cardWidth * 2;
+        double cardHeight = cardWidth * 1.5;
 
         double y = spacing;
 
