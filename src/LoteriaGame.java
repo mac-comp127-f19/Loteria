@@ -42,6 +42,7 @@ public class LoteriaGame {
         Button callLoteria = new Button ("Loteria");
         callLoteria.setPosition(520, 400);
         canvas.add(callLoteria);
+        callLoteria.onClick(this::checkWinLose);
     }
 
     public void addBean(Point point) {
@@ -68,7 +69,11 @@ public class LoteriaGame {
 
     public void checkWinLose() {
         for (Card playCard: cardManager.getCardList()) {
-            if(playCard.setBean(bean));
+            if(playCard.setBean(bean) && cardManager.getRandomColorList() == deck.getDiscardCardColors()){
+                System.out.println("YOU WIN");
+            }else{
+                System.out.println("TRY AGAIN ):");
+            }
         }
     }
 

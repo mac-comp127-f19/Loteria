@@ -50,6 +50,10 @@ public class DeckOfCards extends ArrayList<Card> {
         }
     }
 
+    public List<Color> getDiscardCardColors() {
+        return discardCardColors;
+    }
+
     @Override
     public boolean add(Card card) {
         if(super.add(card)) {
