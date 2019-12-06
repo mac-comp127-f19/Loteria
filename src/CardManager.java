@@ -1,5 +1,4 @@
 import comp127graphics.CanvasWindow;
-import comp127graphics.Rectangle;
 
 import java.awt.*;
 import java.util.ArrayList;

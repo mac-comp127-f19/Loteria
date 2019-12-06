@@ -1,7 +1,6 @@
 import comp127graphics.CanvasWindow;
 import comp127graphics.GraphicsObject;
 import comp127graphics.Point;
-import comp127graphics.Rectangle;
 import comp127graphics.ui.Button;
 
 import java.awt.*;
@@ -23,12 +22,11 @@ public class LoteriaGame {
 
         colors = new Colors();
 
-        deck = new DeckOfCards();
+        deck = new DeckOfCards(480, 150);
 
         addLoteriaButton();
 
         canvas.onClick(event -> {
-                deck.drawCard();
                 addBean(event.getPosition());});
 
         setCards();
@@ -41,7 +39,7 @@ public class LoteriaGame {
 
     private void addLoteriaButton(){
         Button callLoteria = new Button ("Loteria");
-        callLoteria.setPosition(400, 400);
+        callLoteria.setPosition(520, 400);
         canvas.add(callLoteria);
     }
 
