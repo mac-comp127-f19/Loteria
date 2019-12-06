@@ -11,6 +11,7 @@ public class CardManager{
     public static double NUM_ROW = 4;
     private List<Card> cardList = new ArrayList<>();
     private Colors color = new Colors();
+    private List<Color> randomColor = color.getRandomColor();
 
     public CardManager(CanvasWindow canvas) {
         this.canvas = canvas;
@@ -36,9 +37,16 @@ public class CardManager{
             y += cardHeight;
         }
 
-        List<Color> randomColor = color.getRandomColor();
+
         for (int n = 0; n < cardList.size(); n++) {
             cardList.get(n).setFillColor(randomColor.get(n));
         }
+    }
+    public List<Card> getCardList() {
+        return cardList;
+    }
+
+    public List<Color> getRandomColorList () {
+        return randomColor;
     }
 }

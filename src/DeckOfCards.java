@@ -10,6 +10,7 @@ public class DeckOfCards extends ArrayList<Card> {
     private long lastRemoved;
     Colors colors = new Colors();
     private List<Color> drawnCardColor = colors.getRandomColor();
+    private List<Color> discardCardColors = new ArrayList<>();
     private int currentColorIndex = 0;
 
     public DeckOfCards(double x, double y) {
@@ -42,6 +43,7 @@ public class DeckOfCards extends ArrayList<Card> {
         if (proportionOfTheWayThere >= 1.0) {
             // we're done
             drawnCard.setFillColor(drawnCardColor.get(currentColorIndex));
+            discardCardColors.add(drawnCardColor.get(currentColorIndex));
             drawnCard = null;
             timeDrawn = 0;
             currentColorIndex++;

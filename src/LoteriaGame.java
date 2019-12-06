@@ -12,6 +12,7 @@ public class LoteriaGame {
     private DeckOfCards deck;
     private Color backColor = Color.BLACK;
     private Colors colors;
+    private Bean bean;
 
     private CanvasWindow canvas;
 
@@ -62,6 +63,12 @@ public class LoteriaGame {
             card.setFillColor(backColor);
             canvas.add(card);
 
+        }
+    }
+
+    public void checkWinLose() {
+        for (Card playCard: cardManager.getCardList()) {
+            if(playCard.setBean(bean));
         }
     }
 
