@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Colors {
     private List<Color> colors;
-    private Color backColor = Color.BLUE;
     private CardManager cardManager;
 
     public Colors(){
@@ -41,5 +40,9 @@ public class Colors {
 
     public void removeColor(Color color){
         colors.remove(color);
+    }
+
+    public double getColorListSize(){
+        return colors.size();
     }
 }
