@@ -38,10 +38,6 @@ public class Colors {
         return copyofColors;
     }
 
-    public void removeColor(Color color){
-        colors.remove(color);
-    }
-
     public double getColorListSize(){
         return colors.size();
     }
