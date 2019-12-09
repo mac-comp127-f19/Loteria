@@ -12,7 +12,6 @@ public class LoteriaGame {
     private DeckOfCards deck;
     private Color backColor = Color.BLACK;
     private Colors colors;
-    private Bean bean;
 
     private CanvasWindow canvas;
 
@@ -69,7 +68,7 @@ public class LoteriaGame {
 
     public void checkWinLose() {
         for (Card playCard: cardManager.getCardList()) {
-            if(playCard.setBean(bean) && cardManager.getRandomColorList() == deck.getDiscardCardColors()){
+            if(playCard.checkIfHasBean() && deck.getDiscardCardColors().containsAll(cardManager.getRandomColorList())){
                 System.out.println("YOU WIN");
             }else{
                 System.out.println("TRY AGAIN ):");

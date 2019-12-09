@@ -6,6 +6,7 @@ public class Card extends Rectangle{
 
     private CardManager cardManager;
     private Bean bean;
+    public boolean hasBean = true;
 
     public Card(double height, double width, double x, double y, CardManager cardManager) {
         super(x, y, width, height);
@@ -23,9 +24,15 @@ public class Card extends Rectangle{
     public boolean setBean(Bean bean){
         if(this.bean == null){
             this.bean = bean;
-            return true;
+            return hasBean;
         }else{
+            hasBean = false;
             return false;
         }
     }
+
+    public boolean checkIfHasBean(){
+        return hasBean;
+    }
+
 }
