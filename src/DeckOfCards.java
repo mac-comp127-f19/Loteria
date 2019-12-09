@@ -1,3 +1,5 @@
+import comp127graphics.Image;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +11,8 @@ public class DeckOfCards extends ArrayList<Card> {
     private long timeDrawn;
     private long lastRemoved;
     Colors colors = new Colors();
-    private List<Color> drawnCardColor = colors.getRandomColor();
-    private List<Color> discardCardColors = new ArrayList<>();
+    private List<Image> drawnCardColor = colors.getRandomColor();
+    private List<Image> discardCardColors = new ArrayList<>();
     private int currentColorIndex = 0;
 
     public DeckOfCards(double x, double y) {
@@ -50,7 +52,7 @@ public class DeckOfCards extends ArrayList<Card> {
         }
     }
 
-    public List<Color> getDiscardCardColors() {
+    public List<Image> getDiscardCardColors() {
         return discardCardColors;
     }
 
