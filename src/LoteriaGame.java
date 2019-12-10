@@ -69,25 +69,37 @@ public class LoteriaGame {
     public void checkWinLose() {
         for (Card playCard: cardManager.getCardList()) {
             if(playCard.checkIfHasBean() && deck.getDiscardCardColors().containsAll(cardManager.getRandomColorList())){
-                Rectangle winningRectangle = new Rectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 400, 200);
+                Rectangle winningRectangle = new Rectangle(CANVAS_WIDTH/2,
+                        CANVAS_HEIGHT/2,
+                        400,
+                        200);
+
                 winningRectangle.setCenter(CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
                 winningRectangle.setFillColor(Color.YELLOW);
                 winningRectangle.setFilled(true);
+
                 GraphicsText youWin = new GraphicsText("You've won! Yay! (:",
                         winningRectangle.getX()/2,
                         winningRectangle.getY()/2);
+
                 youWin.setCenter(CANVAS_WIDTH/2-50, CANVAS_HEIGHT/2);
                 youWin.setFont(FontStyle.BOLD, 25);
                 canvas.add(winningRectangle);
                 canvas.add(youWin);
+
             }else{
-                Rectangle losingRectangle = new Rectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 400, 200);
+                Rectangle losingRectangle = new Rectangle(CANVAS_WIDTH/2,
+                        CANVAS_HEIGHT/2,
+                        400,
+                        200);
+
                 losingRectangle.setCenter(CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
                 losingRectangle.setFillColor(Color.BLACK);
                 losingRectangle.setFilled(true);
                 GraphicsText youLose = new GraphicsText("You lose! Aw! ):",
                         losingRectangle.getX()/2,
                         losingRectangle.getY()/2);
+
                 youLose.setCenter(CANVAS_WIDTH/2-50, CANVAS_HEIGHT/2);
                 youLose.setFont(FontStyle.BOLD, 25);
                 youLose.setFillColor(Color.WHITE);
