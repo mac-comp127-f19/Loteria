@@ -7,10 +7,10 @@ public class DeckOfCards extends ArrayList<Card> {
     private Card drawnCard;
     private long timeDrawn;
     private long lastRemoved;
-    Colors colors = new Colors();
-    private List<String> drawnCardColor = colors.getRandomColor();
-    private List<String> discardCardColors = new ArrayList<>();
-    private int currentColorIndex = 0;
+    ImageResource imageResource = new ImageResource();
+    private List<String> drawnCardImages = imageResource.getRandomImages();
+    private List<String> discardCardImages = new ArrayList<>();
+    private int currentImageIndex = 0;
 
     public DeckOfCards(double x, double y) {
         drawnCard = null;
@@ -41,16 +41,16 @@ public class DeckOfCards extends ArrayList<Card> {
 
         if (proportionOfTheWayThere >= 1.0) {
             // we're done
-            drawnCard.setImagePath(drawnCardColor.get(currentColorIndex));
-            discardCardColors.add(drawnCardColor.get(currentColorIndex));
+            drawnCard.setImagePath(drawnCardImages.get(currentImageIndex));
+            discardCardImages.add(drawnCardImages.get(currentImageIndex));
             drawnCard = null;
             timeDrawn = 0;
-            currentColorIndex++;
+            currentImageIndex++;
         }
     }
 
-    public List<String> getDiscardCardColors() {
-        return discardCardColors;
+    public List<String> getDiscardCardImages() {
+        return discardCardImages;
     }
 
     @Override

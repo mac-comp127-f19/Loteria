@@ -4,11 +4,11 @@ import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Colors {
-    private List<String> colors;
+public class ImageResource {
+    private List<String> images;
     private CardManager cardManager;
 
-    public Colors(){
+    public ImageResource(){
 
         List <Image> images = Arrays.asList(
         new Image(0,0, "alacran.png"),
@@ -66,16 +66,16 @@ public class Colors {
         new Image(0,0, "venado.png"),
         new Image(0,0, "violincello.png"));
 
-        colors = images.stream().map(Image::getPath).collect(Collectors.toList());
+        this.images = images.stream().map(Image::getPath).collect(Collectors.toList());
     }
 
-    public List<String> getRandomColor() {
-        List<String> copyofColors = new ArrayList(colors);
+    public List<String> getRandomImages() {
+        List<String> copyofColors = new ArrayList(images);
         Collections.shuffle(copyofColors);
         return copyofColors;
     }
 
-    public double getColorListSize(){
-        return colors.size();
+    public double getImagePathListSize(){
+        return images.size();
     }
 }

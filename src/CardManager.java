@@ -8,8 +8,8 @@ public class CardManager{
     public static double NUM_BRICKS_PER_ROW = 4;
     public static double NUM_ROW = 4;
     private List<Card> cardList = new ArrayList<>();
-    private Colors color = new Colors();
-    private List<String> randomColor = color.getRandomColor();
+    private ImageResource imageResource = new ImageResource();
+    private List<String> randomImagePath = imageResource.getRandomImages();
 
     public CardManager(CanvasWindow canvas) {
         this.canvas = canvas;
@@ -36,14 +36,14 @@ public class CardManager{
         }
 
         for (int n = 0; n < cardList.size(); n++) {
-            cardList.get(n).setImagePath(randomColor.get(n));
+            cardList.get(n).setImagePath(randomImagePath.get(n));
         }
     }
     public List<Card> getCardList() {
         return cardList;
     }
 
-    public List<String> getRandomColorList () {
-        return randomColor;
+    public List<String> getRandomImageList() {
+        return randomImagePath;
     }
 }

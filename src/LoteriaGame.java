@@ -10,8 +10,8 @@ public class LoteriaGame {
     private static final int CANVAS_HEIGHT = 600;
     private CardManager cardManager;
     private DeckOfCards deck;
-    private String backColor = "backColor.png";
-    private Colors colors;
+    private String backImage = "backColor.png";
+    private ImageResource imageResource;
 
     private CanvasWindow canvas;
 
@@ -20,7 +20,7 @@ public class LoteriaGame {
 
         cardManager = new CardManager(canvas);
 
-        colors = new Colors();
+        imageResource = new ImageResource();
 
         deck = new DeckOfCards(480, 150);
 
@@ -56,11 +56,11 @@ public class LoteriaGame {
     }
 
     public void setCards() {
-        for(int n = 0; n < colors.getColorListSize(); n++) {
+        for(int n = 0; n < imageResource.getImagePathListSize(); n++) {
             deck.add(new Card(480, 150, cardManager));
         }
         for(Card card: deck) {
-            card.setImagePath(backColor);
+            card.setImagePath(backImage);
             canvas.add(card);
 
         }
@@ -68,7 +68,7 @@ public class LoteriaGame {
 
     public void checkWinLose() {
         for (Card playCard: cardManager.getCardList()) {
-            if(playCard.checkIfHasBean() && deck.getDiscardCardColors().containsAll(cardManager.getRandomColorList())){
+            if(playCard.checkIfHasBean() && deck.getDiscardCardImages().containsAll(cardManager.getRandomImageList())){
                 Rectangle winningRectangle = new Rectangle(CANVAS_WIDTH/2,
                         CANVAS_HEIGHT/2,
                         400,
