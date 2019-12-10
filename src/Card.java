@@ -1,22 +1,13 @@
-import comp127graphics.Rectangle;
+import comp127graphics.Image;
 
-import java.awt.*;
-
-public class Card extends Rectangle{
+public class Card extends Image {
 
     private CardManager cardManager;
     private Bean bean;
     public boolean hasBean = true;
 
-    public Card(double height, double width, double x, double y, CardManager cardManager) {
-        super(x, y, width, height);
-
-//        int red = (int) (Math.random() * 256);
-//        int green = (int) (Math.random() * 256);
-//        int blue = (int) (Math.random() * 256);
-//        Color randomColor = new Color(red, green, blue);
-
-//        this.setFillColor(randomColor);
+    public Card(double x, double y, CardManager cardManager) {
+        super(x, y);
 
         this.cardManager = cardManager;
     }

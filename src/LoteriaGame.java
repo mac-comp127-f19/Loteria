@@ -10,7 +10,7 @@ public class LoteriaGame {
     private static final int CANVAS_HEIGHT = 600;
     private CardManager cardManager;
     private DeckOfCards deck;
-    private Color backColor = Color.BLACK;
+    private String backColor = "backColor.png";
     private Colors colors;
 
     private CanvasWindow canvas;
@@ -57,10 +57,10 @@ public class LoteriaGame {
 
     public void setCards() {
         for(int n = 0; n < colors.getColorListSize(); n++) {
-            deck.add(new Card(100, 75, 480, 150, cardManager));
+            deck.add(new Card(480, 150, cardManager));
         }
         for(Card card: deck) {
-            card.setFillColor(backColor);
+            card.setImagePath(backColor);
             canvas.add(card);
 
         }
@@ -95,6 +95,10 @@ public class LoteriaGame {
                 canvas.add(losingRectangle);
                 canvas.add(youLose);
             }
+            Button finish = new Button("Finish");
+            finish.setPosition(CANVAS_WIDTH/2-50, CANVAS_HEIGHT/2+50);
+            canvas.add(finish);
+            finish.onClick(() -> canvas.closeWindow());
         }
     }
 

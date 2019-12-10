@@ -1,6 +1,3 @@
-import comp127graphics.Image;
-
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +8,8 @@ public class DeckOfCards extends ArrayList<Card> {
     private long timeDrawn;
     private long lastRemoved;
     Colors colors = new Colors();
-    private List<Image> drawnCardColor = colors.getRandomColor();
-    private List<Image> discardCardColors = new ArrayList<>();
+    private List<String> drawnCardColor = colors.getRandomColor();
+    private List<String> discardCardColors = new ArrayList<>();
     private int currentColorIndex = 0;
 
     public DeckOfCards(double x, double y) {
@@ -44,7 +41,7 @@ public class DeckOfCards extends ArrayList<Card> {
 
         if (proportionOfTheWayThere >= 1.0) {
             // we're done
-            drawnCard.setFillColor(drawnCardColor.get(currentColorIndex));
+            drawnCard.setImagePath(drawnCardColor.get(currentColorIndex));
             discardCardColors.add(drawnCardColor.get(currentColorIndex));
             drawnCard = null;
             timeDrawn = 0;
@@ -52,7 +49,7 @@ public class DeckOfCards extends ArrayList<Card> {
         }
     }
 
-    public List<Image> getDiscardCardColors() {
+    public List<String> getDiscardCardColors() {
         return discardCardColors;
     }
 
