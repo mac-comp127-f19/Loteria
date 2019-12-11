@@ -1,5 +1,8 @@
 import comp127graphics.Image;
 
+/**
+ * Creates a bean from an image
+ */
 public class Bean extends Image {
     private String beanImage = "bean.png";
     private double x;

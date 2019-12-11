@@ -2,6 +2,10 @@ import comp127graphics.CanvasWindow;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Creates a list of rectangles that are placed in multiple ways: one being the main card and another being the deck of
+ * cards. Each rectangle is then filled with a random image every time the program runs.
+ */
 public class CardManager{
 
     private CanvasWindow canvas;
@@ -16,6 +20,9 @@ public class CardManager{
         cardRows();
     }
 
+    /**
+     * spaces the cards into rows to mimick a playing card
+     */
     public void cardRows(){
         double spacing = canvas.getWidth() * 0.14;
 
