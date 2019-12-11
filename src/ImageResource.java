@@ -9,7 +9,8 @@ public class ImageResource {
 
     public ImageResource() {
 
-        File res = new File("Loteria/res");
+
+        File res = new File("/Users/zullymaya/Desktop/Macalester/comp127-f19/Loteria/res");
         System.out.println(res.getAbsolutePath());
         List<File> imagePathList = new ArrayList<>(Arrays.asList(res.listFiles()));
         images = imagePathList.stream().map(File::getName).

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
-
+/* This class creates a list of Cards that act as a deck of cards
+ */
 public class DeckOfCards extends ArrayList<Card> {
     private double x;
     private double y;
@@ -31,6 +32,10 @@ public class DeckOfCards extends ArrayList<Card> {
         }
     }
 
+    /*
+    Changes the position of the card being drawn and changed it's image.
+    It also adds that image to a list that contains the images being shown.
+     */
     public void updateCard() {
         if (drawnCard == null) return;
 
@@ -49,10 +54,16 @@ public class DeckOfCards extends ArrayList<Card> {
         }
     }
 
+    /*
+    Returns the list of images that were being shown by the discarding cards
+     */
     public List<String> getDiscardCardImages() {
         return discardCardImages;
     }
 
+    /*
+    overrides the canvas.add function to set the card position.
+     */
     @Override
     public boolean add(Card card) {
         if(super.add(card)) {
