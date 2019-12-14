@@ -2,8 +2,16 @@ import comp127graphics.*;
 import comp127graphics.Point;
 import comp127graphics.Rectangle;
 import comp127graphics.ui.Button;
-
 import java.awt.*;
+
+/**
+ * The game of Loteria
+ *
+ * The class that creates and runs the main components of the game like the main window, the win/lose mechanics,
+ *
+ *
+ * @author Ivy Contreras, Zully Maya, and Haley Vien
+ */
 
 public class LoteriaGame {
     private static final int CANVAS_WIDTH = 800;
@@ -37,12 +45,21 @@ public class LoteriaGame {
         });
     }
 
+    /**
+     * Creates the button that the player presses to check if they have won the game or not
+     */
+
     private void addLoteriaButton(){
         Button callLoteria = new Button ("Loteria");
         callLoteria.setPosition(520, 400);
         canvas.add(callLoteria);
         callLoteria.onClick(this::checkWinLose);
     }
+
+    /**
+     * This adds a bean to the canvas on top of a card a player has if the card already does not have a bean
+     * @param point
+     */
 
     public void addBean(Point point) {
         GraphicsObject object = canvas.getElementAt(point);
@@ -55,6 +72,10 @@ public class LoteriaGame {
         }
     }
 
+    /**
+     * Sets the image for all the cards in a deck and adds them to the canvas
+     */
+
     public void setCards() {
         for(int n = 0; n < imageResource.getImagePathListSize(); n++) {
             deck.add(new Card(480, 150, cardManager));
@@ -65,6 +86,11 @@ public class LoteriaGame {
 
         }
     }
+
+    /**
+     * Determines if the player has won or loss through checking if a player has set a bean on all of their cards
+     * and if their cards have been pulled from the deck.
+     */
 
     public void checkWinLose() {
         for (Card playCard: cardManager.getCardList()) {
