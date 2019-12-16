@@ -1,4 +1,5 @@
 import java.io.File;
+import java.net.URLDecoder;
 import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,9 +14,9 @@ public class ImageResource {
     private List<String> images;
 
     public ImageResource() {
-        File imageDir = new File(getClass().getResource("/bean.png").getFile()).getParentFile();
+        File imageDir = new File(URLDecoder.decode(getClass().getResource("/bean.png").getFile())).getParentFile();
         File cardsDir = new File(imageDir, "cards");
-        images = Arrays.stream(Objects.requireNonNull(cardsDir.listFiles(), "cannot find images files"))
+        images = Arrays.stream(Objects.requireNonNull(cardsDir.listFiles(), "cannot find image files"))
                 .map(file -> "cards/" + file.getName())
                 .filter(name -> name.endsWith(".png"))
                 .collect(Collectors.toList());
