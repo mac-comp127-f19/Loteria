@@ -1,5 +1,5 @@
 import comp127graphics.Image;
-/*
+/**
 This class creates a card that is used in the main playing card and the deck of cards.
  */
 public class Card extends Image {
@@ -14,7 +14,7 @@ public class Card extends Image {
         this.cardManager = cardManager;
     }
 
-    /*
+    /**
     Checks to see if there is a bean on the card, and if there isn't one it sets
     a bean. It also sets hasBean depending on if there is a bean there or not.
      */
@@ -28,7 +28,7 @@ public class Card extends Image {
         }
     }
 
-    /*
+    /**
     Returns hasBean
      */
     public boolean checkIfHasBean(){

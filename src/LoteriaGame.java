@@ -1,3 +1,9 @@
+/**
+ * Authors: Ivy C., Haley V., Zully
+ * This class allows a user to play a game called Loteria, similar to Bingo.
+ * Acknowledgements: Thy and Logan! (:
+ */
+
 import comp127graphics.*;
 import comp127graphics.Point;
 import comp127graphics.Rectangle;
